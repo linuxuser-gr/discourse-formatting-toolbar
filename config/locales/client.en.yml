@@ -3,6 +3,8 @@ en:
     composer:
       underline_ui_button_title: "Underline text"
       underline_ui_default_text: "Text"
+      strikethrough_ui_button_title: "Strikethrough text"
+      strikethrough_ui_default_text: "Text"
       color_ui_button_title: "Color text"
       color_ui_default_text: "Text"
       addimg_ui_button_title: "Add an image"
@@ -19,3 +21,8 @@ en:
       justify_ui_default_text: "Text"
       size_ui_button_title: "Change the size of your text"
       size_ui_default_text: "Text"
+      code_bash_text: "ls -la"
+      kbd_ui_default_text: "Ctrl"
+      kbd_ui_button_title: "Keyboard"
+      math_ui_button_title: "Equation"
+      math_ui_default_text: "\\sqrt{x^2}"
