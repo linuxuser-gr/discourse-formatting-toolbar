@@ -1,6 +1,7 @@
 import { withPluginApi } from 'discourse/lib/plugin-api';
 import { onToolbarCreate } from 'discourse/components/d-editor';
 
+
 function initializePlugin(api)
 {
   const siteSettings = api.container.lookup('site-settings:main');
@@ -25,33 +26,6 @@ function initializePlugin(api)
         });
     });
 
-//     api.onToolbarCreate(toolbar => {
-//         toolbar.addButton({
-//           id: "addimg_ui_button",
-//           group: "extras",
-//           icon: "far-image",
-//           perform: e => e.applySurround('[img]', '[/img]', 'addimg_ui_default_text')
-//         });
-//     });
-
-//     api.onToolbarCreate(toolbar => {
-//         toolbar.addButton({
-//           id: "floatl_ui_button",
-//           group: "extras",
-//           icon: "indent",
-//           perform: e => e.applySurround('[floatl]', '[/floatl]', 'floatl_ui_default_text')
-//         });
-//     });
-
-//     api.onToolbarCreate(toolbar => {
-//         toolbar.addButton({
-//           id: "left_ui_button",
-//           group: "extras",
-//           icon: "align-left",
-//           perform: e => e.applySurround('[left]', '[/left]', 'left_ui_default_text')
-//         });
-//     });
-
     api.onToolbarCreate(toolbar => {
         toolbar.addButton({
           id: "center_ui_button",
@@ -60,24 +34,6 @@ function initializePlugin(api)
           perform: e => e.applySurround('[center]', '[/center]', 'center_ui_default_text')
         });
     });
-
-//     api.onToolbarCreate(toolbar => {
-//         toolbar.addButton({
-//           id: "right_ui_button",
-//           group: "extras",
-//           icon: "align-right",
-//           perform: e => e.applySurround('[right]', '[/right]', 'right_ui_default_text')
-//         });
-//     });
-
-//     api.onToolbarCreate(toolbar => {
-//         toolbar.addButton({
-//           id: "justify_ui_button",
-//           group: "extras",
-//           icon: "align-justify",
-//           perform: e => e.applySurround('[justify]', '[/justify]', 'justify_ui_default_text')
-//         });
-//     });
 
 
     api.onToolbarCreate(toolbar => {
@@ -89,42 +45,73 @@ function initializePlugin(api)
         });
     });
 
-    api.onToolbarCreate(toolbar => {
-        toolbar.addButton({
-          id: "kbd_ui_button",
-          group: "extras",
-          icon: "keyboard",
-          perform: e => e.applySurround('<kbd>', '</kbd>', 'kbd_ui_default_text')
-        });
-    });
+    
+  api.addToolbarPopupMenuOptionsCallback(() => {
+    return {
+        action: "palette",
+        icon: "palette",
+        label: "composer.color_ui_button_title"
+    };
+  });
+    
+  api.addToolbarPopupMenuOptionsCallback(() => {
+    return {
+        action: "fontsize",
+        icon: "font",
+        label: "composer.size_ui_button_title"
+    };
+  });
 
-    api.onToolbarCreate(toolbar => {
-        toolbar.addButton({
-          id: "math_ui_button",
-          group: "extras",
-          icon: "square-root-alt",
-          perform: e => e.applySurround('$', '$', 'math_ui_default_text')
-        });
-    });
+  api.addToolbarPopupMenuOptionsCallback(() => {
+    return {
+        action: "mathbtn",
+        icon: "square-root-alt",
+        label: "composer.math_ui_button_title"
+    };
+  }); 
+  
+  api.addToolbarPopupMenuOptionsCallback(() => {
+    return {
+        action: "keyboardbtn",
+        icon: "keyboard",
+        label: "composer.kbd_ui_button_title"
+    };
+  }); 
+
+  api.addToolbarPopupMenuOptionsCallback(() => {
+    return {
+        action: "diagrambtn",
+        icon: "project-diagram",
+        label: "composer.graph_ui_button_title"
+    };
+  }); 
+
+  api.modifyClass("controller:composer", {
+    actions: {
+      fontsize() {
+        this.get("toolbarEvent").applySurround('[size=4]', '[/size]', 'size_ui_default_text');
+      },
+      palette() {
+        this.get("toolbarEvent").applySurround('[color=red]', '[/color]', 'color_ui_default_text');
+      },
+      mathbtn() {
+        this.get("toolbarEvent").applySurround('$', '$', 'math_ui_default_text');
+      },
+      keyboardbtn() {
+        this.get("toolbarEvent").applySurround('<kbd>', '</kbd>', 'kbd_ui_default_text');
+      },
+      prebtn() {
+        this.get("toolbarEvent").applySurround('<pre>', '</pre>', 'pre_ui_default_text');
+      },
+      diagrambtn() {
+        this.get("toolbarEvent").applySurround('\n', '\n', 'graph_ui_default_text', { multiline: false } );
+      }
+
+    }
+  });
 
 
-    api.onToolbarCreate(toolbar => {
-        toolbar.addButton({
-          id: "color_ui_button",
-          group: "extras",
-          icon: "palette",
-          perform: e => e.applySurround('[color=red]', '[/color]', 'color_ui_default_text')
-        });
-    });
 
-    api.onToolbarCreate(toolbar => {
-        toolbar.addButton({
-          id: "size_ui_button",
-          group: "extras",
-          icon: "font",
-          perform: e => e.applySurround('[size=4]', '[/size]', 'size_ui_default_text')
-        });
-    });
   }
 }
 
