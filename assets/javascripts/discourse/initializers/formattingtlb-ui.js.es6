@@ -86,6 +86,14 @@ function initializePlugin(api)
     };
   }); 
 
+  api.addToolbarPopupMenuOptionsCallback(() => {
+    return {
+        action: "prebtn",
+        icon: "text-width",
+        label: "composer.pre_button_title"
+    };
+  }); 
+
   api.modifyClass("controller:composer", {
     actions: {
       fontsize() {
