@@ -98,6 +98,8 @@ export function setup(helper) {
     'div.bbcodecenter',
     'div.bbcoderight',
     'div.bbcodejustify',
+    'pre.cmdline',
+    'pre.cmdoutput',
     'font[color=*]',
     'font[size=*]'
   ]);

@@ -29,4 +29,6 @@ el:
       pre_ui_default_text: "Κείμενο σταθερού πλάτους"
       pre_button_title: "Σταθερό πλάτος"
       graph_ui_button_title: "Διάγραμμα"
-      graph_ui_default_text: "[graphviz engine=dot]\ngraph {\n\ta -- b;\n\tc -- b;\n\tc -- a;\n}\n[/graphviz]"
+      graph_ui_default_text: "\ta -- b;\n\tc -- b;\n\tc -- a;\n"
+      cmdline_ui_button_title: "Εντολή Τερματικού"
+      cmdline_ui_default_text: "sudo apt install boo"

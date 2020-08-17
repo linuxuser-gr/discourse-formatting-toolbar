@@ -112,9 +112,8 @@ function initializePlugin(api)
         this.get("toolbarEvent").applySurround('<pre>', '</pre>', 'pre_ui_default_text');
       },
       diagrambtn() {
-        this.get("toolbarEvent").applySurround('\n', '\n', 'graph_ui_default_text', { multiline: false } );
+        this.get("toolbarEvent").applySurround('\n[graphviz engine=dot]\ngraph {\n', '\n}\n[/graphviz]\n', 'graph_ui_default_text', { multiline: false } );
       }
-
     }
   });
 
