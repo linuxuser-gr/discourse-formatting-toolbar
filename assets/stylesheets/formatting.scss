@@ -38,6 +38,13 @@ $cmdline-padding: 30px;
 	margin-left: $cmdline-padding;
 	color: var(--primary-very-high);
 	background: var(--hljs-bg);
+	
+	overflow: auto;
+	-moz-tab-size: 4;
+	tab-size: 4;
+	&.lang-markdown {
+	  white-space: pre-wrap;
+	}
 }
 
 .topic-body .cooked .bbcodeleft, .topic-body .cooked .bbcodecenter, .topic-body .cooked .bbcoderight, .topic-body .cooked .bbcodejustify {
