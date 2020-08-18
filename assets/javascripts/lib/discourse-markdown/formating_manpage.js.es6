@@ -16,7 +16,8 @@ export function setup(helper) {
         let text = content.trim();
         let matches = regExp.exec(text);
         let baseURL = 'https://man7.org/linux/man-pages';
-        let manpageURL = `${baseURL}/man${matches[2]}/${matches[1]}.${matches[2]}.html`;
+        let manSection =`man${parseInt(matches[2])}`
+        let manpageURL = `${baseURL}/${manSection}/${matches[1]}.${matches[2]}.html`;
         let escaped = state.md.utils.escapeHtml(text);
 
         let svgName = "book-open";
