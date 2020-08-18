@@ -36,4 +36,5 @@ en:
       output_ui_default_text: "command not found"
       code_ui_button_title: "Code"
       code_ui_default_text: "print('hello wordld');"
-
+      man_ui_button_title: "Man Page"
+      man_ui_default_text: "apt(1)"
