@@ -1,5 +1,3 @@
-$cmdline-padding: 30px;
-
 .floatl {
 	float:left;
 	margin-right:10px; 
@@ -28,53 +26,6 @@ $cmdline-padding: 30px;
 
 .bbcodejustify {
     text-align: justify;
-}
-
-.cmdline {
-	margin-left: $cmdline-padding;
-}
-
-.cmdline-img {
-	background-image: asset_url('/plugins/discourse-formatting-toolbar/images/terminal-solid.svg');
-	background-repeat: no-repeat;
-	background-position: 6px 5px;
-	float: left;
-	margin-right:6px;
-	width:32px;
-	height: 36px;
-}
-
-.cmdoutput {
-	margin-left: $cmdline-padding;
-	color: var(--primary-very-high);
-	background: var(--hljs-bg);
-	
-	font-size: smaller;
-
-	overflow: auto;
-	-moz-tab-size: 4;
-	tab-size: 4;
-	&.lang-markdown {
-	  white-space: pre-wrap;
-	}
-}
-
-
-.cmdoutput-img {
-	background-image: asset_url('/plugins/discourse-formatting-toolbar/images/tv-solid.svg');
-	background-repeat: no-repeat;
-	background-position: 15px 2px;
-	float: left;
-	margin-right:6px;
-	width:32px;
-	height: 36px;
-}
-
-a.manpage {
-	background-image: asset_url('/plugins/discourse-formatting-toolbar/images/book-open-solid.svg');
-	background-repeat: no-repeat;
-	background-position: 0px 0px;
-	padding-left: 22px;
 }
 
 .topic-body .cooked .bbcodeleft, .topic-body .cooked .bbcodecenter, .topic-body .cooked .bbcoderight, .topic-body .cooked .bbcodejustify {
