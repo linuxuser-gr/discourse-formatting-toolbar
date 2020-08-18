@@ -23,6 +23,8 @@ register_svg_icon "fa-project-diagram" if respond_to?(:register_svg_icon)
 register_svg_icon "fa-directions" if respond_to?(:register_svg_icon)
 register_svg_icon "fa-rss-square" if respond_to?(:register_svg_icon)
 
+register_svg_icon "fa-file-code" if respond_to?(:register_svg_icon)
+
 # Support man pages
 register_svg_icon "fa-book-open" if respond_to?(:register_svg_icon)
 

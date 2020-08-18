@@ -32,3 +32,8 @@ en:
       graph_ui_default_text: "\ta -- b;\n\tc -- b;\n\tc -- a;\n"
       cmdline_ui_button_title: "Command"
       cmdline_ui_default_text: "sudo apt install boo"
+      output_ui_button_title: "Cmd Output"
+      output_ui_default_text: "command not found"
+      code_ui_button_title: "Code"
+      code_ui_default_text: "print('hello wordld');"
+

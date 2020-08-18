@@ -38,14 +38,24 @@ function initializePlugin(api)
 
     api.onToolbarCreate(toolbar => {
         toolbar.addButton({
-            id: "code_button",
+            id: "cmdline_ui_button",
             group: "insertions",
             icon: "terminal",
-            perform: e => e.applySurround('\n```shell\n', '\n```\n', 'code_bash_text', { multiline: false } )
+            perform: e => e.applySurround('[cmdline] ', ' [/cmdline]', 'cmdline_ui_default_text' )
         });
     });
 
-    
+
+    api.onToolbarCreate(toolbar => {
+      toolbar.addButton({
+          id: "output_ui_button",
+          group: "insertions",
+          icon: "desktop",
+          perform: e => e.applySurround('[output]\n', '\n[/output]', 'output_ui_default_text', { multiline: false } )
+      });
+  });
+
+
   api.addToolbarPopupMenuOptionsCallback(() => {
     return {
         action: "palette",
@@ -88,9 +98,9 @@ function initializePlugin(api)
 
   api.addToolbarPopupMenuOptionsCallback(() => {
     return {
-        action: "prebtn",
-        icon: "text-width",
-        label: "composer.pre_button_title"
+        action: "codebtn",
+        icon: "fa-file-code",
+        label: "composer.code_ui_button_title"
     };
   }); 
 
@@ -108,8 +118,8 @@ function initializePlugin(api)
       keyboardbtn() {
         this.get("toolbarEvent").applySurround('<kbd>', '</kbd>', 'kbd_ui_default_text');
       },
-      prebtn() {
-        this.get("toolbarEvent").applySurround('<pre>', '</pre>', 'pre_ui_default_text');
+      codebtn() {
+        this.get("toolbarEvent").applySurround('``` python\n', '\n````\n', 'code_ui_default_text', { multiline: false });
       },
       diagrambtn() {
         this.get("toolbarEvent").applySurround('\n[graphviz engine=dot]\ngraph {\n', '\n}\n[/graphviz]\n', 'graph_ui_default_text', { multiline: false } );
