@@ -65,33 +65,9 @@ function initializePlugin(api) {
 
     api.addToolbarPopupMenuOptionsCallback(() => {
       return {
-        action: "fontsize",
-        icon: "font",
-        label: "composer.size_ui_button_title"
-      };
-    });
-
-    api.addToolbarPopupMenuOptionsCallback(() => {
-      return {
-        action: "mathbtn",
-        icon: "square-root-alt",
-        label: "composer.math_ui_button_title"
-      };
-    });
-
-    api.addToolbarPopupMenuOptionsCallback(() => {
-      return {
         action: "keyboardbtn",
         icon: "keyboard",
         label: "composer.kbd_ui_button_title"
-      };
-    });
-
-    api.addToolbarPopupMenuOptionsCallback(() => {
-      return {
-        action: "diagrambtn",
-        icon: "project-diagram",
-        label: "composer.graph_ui_button_title"
       };
     });
 
@@ -113,14 +89,8 @@ function initializePlugin(api) {
 
     api.modifyClass("controller:composer", {
       actions: {
-        fontsize() {
-          this.get("toolbarEvent").applySurround('[size=4]', '[/size]', 'size_ui_default_text');
-        },
         palette() {
           this.get("toolbarEvent").applySurround('[color=red]', '[/color]', 'color_ui_default_text');
-        },
-        mathbtn() {
-          this.get("toolbarEvent").applySurround('$', '$', 'math_ui_default_text');
         },
         keyboardbtn() {
           this.get("toolbarEvent").applySurround('<kbd>', '</kbd>', 'kbd_ui_default_text');
@@ -130,9 +100,6 @@ function initializePlugin(api) {
         },
         codebtn() {
           this.get("toolbarEvent").applySurround('``` python\n', '\n````\n', 'code_ui_default_text', { multiline: false });
-        },
-        diagrambtn() {
-          this.get("toolbarEvent").applySurround('\n[graphviz engine=dot]\ngraph {\n', '\n}\n[/graphviz]\n', 'graph_ui_default_text', { multiline: false });
         }
       }
     });
