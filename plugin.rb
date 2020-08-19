@@ -8,6 +8,8 @@ enabled_site_setting :formattingtlb_enabled
 
 register_asset 'stylesheets/formatting.scss'
 register_asset 'stylesheets/terminal.scss'
+register_asset 'stylesheets/info_boxes.scss'
+
 
 register_svg_icon "fa-underline" if respond_to?(:register_svg_icon)
 register_svg_icon "fa-align-left" if respond_to?(:register_svg_icon)

@@ -1,0 +1,36 @@
+// Styles for boxes
+
+
+.bbInfoBox-img {
+    float: left;
+    margin-right: 6px;
+    margin-top: 4px;
+    clear: left;
+}
+
+.bbInfoBox-box {
+    margin: 8px;
+    padding: 8px;
+    color: var(--primary-very-high);
+
+    border-left: 5px solid var(--primary-low);
+    background-color: var(--blend-primary-secondary-5);
+    
+    min-height: 45px;
+
+    overflow: auto;
+    -moz-tab-size: 2;
+    tab-size: 2;
+    &.lang-markdown {
+        white-space: pre-wrap;
+    }
+}
+
+.bbInfoBox-box > p:first-child {
+    margin-top: 0px;
+}
+
+.bbInfoBox-box > p:last-child {
+    margin-bottom: 0px;
+}
+

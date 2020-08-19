@@ -3,10 +3,6 @@
 export function setup(helper) {
   if (!helper.markdownIt) { return; }
 
-  helper.registerOptions((opts, siteSettings) => {
-    opts.features.mermaid = siteSettings.discourse_mermaid_enabled;
-  });
-
   helper.registerPlugin(md => {
     md.inline.bbcode.ruler.push("man", {
       tag: "man",

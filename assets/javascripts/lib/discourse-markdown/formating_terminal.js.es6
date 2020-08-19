@@ -1,6 +1,6 @@
 // Command line markdown extensions
 
-function SVGIcon(icon,klass) {
+function SVGIcon(icon, klass) {
   let svg = `<svg class="fa d-icon d-${icon} svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#${icon}"></use></svg>`
   let sideIcon = `<div class="${klass}">${svg}</div>`
   return sideIcon;
@@ -13,9 +13,9 @@ function BBCommand(state, tagInfo, content) {
   token.content = SVGIcon("terminal", "cmdline-img");
 
   const numLines = (content.match(/\n/g) || '').length + 1
-  if ( numLines == 1) {
+  if (numLines == 1) {
     content = content.trim();
-  } 
+  }
   let escapedContent = state.md.utils.escapeHtml(content);
 
   token = state.push("html_raw", '', 0);
