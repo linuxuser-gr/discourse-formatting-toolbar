@@ -23,7 +23,7 @@ function BuildBox(emoji, state, tagInfo) {
 }
 
 function BuildInfoBox(state, tagInfo) {
-  BuildBox('information_source', state, tagInfo);
+  BuildBox('bulb', state, tagInfo);
 }
 
 function BuildWaringBox(state, tagInfo) {
